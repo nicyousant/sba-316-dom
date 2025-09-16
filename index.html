@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <div>
+                <div id="header">
+                    <h1>In Loving Memory of Abuelita Gloria</h1>
+                </div>
+                <img id="rounded-img" src="images/abuela406x464.PNG" />
+                <div>
+                    <form>
+                       <h2>
+                            Memorial Service RSVP
+                       </h2>
+                        <label>Name: </label><input name="attendeeName" placeholder="Please enter your name." required /><br>
+                        <label>Email Address:</label><input name="attendeeEmail" type="email" placeholder="Please enter your email address." required><br>
+                        <fieldset>Attendance:
+                            <label>In-person</label><input type="radio" name="attendance" id="in-person" value="In-person" required></label>
+                            <label>Zoom</label><input type="radio" name="attendance" value="Zoom" id="zoom" required>
+                            <label>Will not attend</label><input type="radio" name="attendance" id="regrets" value="Regrets" required>
+                            </fieldset>
+                        <input type="submit" placeholder="Submit">
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
