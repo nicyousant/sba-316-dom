@@ -21,12 +21,34 @@
                         <label>Name: </label><input name="attendeeName" placeholder="Please enter your name." required /><br>
                         <label>Email Address:</label><input name="attendeeEmail" type="email" placeholder="Please enter your email address." required><br>
                         <fieldset>Attendance:
-                            <label>In-person</label><input type="radio" name="attendance" id="in-person" value="In-person" required></label>
-                            <label>Zoom</label><input type="radio" name="attendance" value="Zoom" id="zoom" required>
-                            <label>Will not attend</label><input type="radio" name="attendance" id="regrets" value="Regrets" required>
+                            <input type="radio" name="attendance" id="in-person" value="In-person" required><label>In-person</label>
+                           <input type="radio" name="attendance" value="Zoom" id="zoom" required> <label>Zoom</label>
+                           <input type="radio" name="attendance" id="regrets" value="Regrets" required> <label>Will not attend</label>
                             </fieldset>
-                        <input type="submit" placeholder="Submit">
+                        <input type="submit" id="submitForm" placeholder="Submit">
                     </form>
+                </div>
+                <div>
+                    <h2>What's your favorite memory of Abuelita Gloria?</h2>
+                    <textarea id="comments"></textarea>
+                                            <button id="submitComments">Add</button>
+
+                    <!-- <ul id=""></ul> -->
+                     <ul id="favMemories">
+
+                     </ul>
+
+
+                </div>
+                
+                <div id="app">
+                <template id="postTemplate">
+                    <h3 style="margin: 0px;">Title</h3>
+                    <hr />
+                    <div style="padding: 0px 15px; margin-bottom: 50px;">
+                    <p>Content</p>
+                    </div>
+                </template>
                 </div>
             </div>
         </main>
