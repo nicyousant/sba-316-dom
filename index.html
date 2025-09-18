@@ -4,53 +4,92 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
         <title>Document</title>
     </head>
     <body>
         <main>
-            <div>
+            
+                <img id="banner" src="images/oldphotos-sm.jpg" />
                 <div id="header">
-                    <h1>In Loving Memory of Abuelita Gloria</h1>
+                <h1>In Loving Memory of Abuelita Gloria</h1>
                 </div>
                 <img id="rounded-img" src="images/abuela406x464.PNG" />
+<div id="flowerPop"></div>
                 <div>
+                    
                     <form>
-                       <h2>
-                            Memorial Service RSVP
-                       </h2>
-                        <label>Name: </label><input name="attendeeName" placeholder="Please enter your name." required /><br>
-                        <label>Email Address:</label><input name="attendeeEmail" type="email" placeholder="Please enter your email address." required><br>
-                        <fieldset>Attendance:
-                            <input type="radio" name="attendance" id="in-person" value="In-person" required><label>In-person</label>
-                           <input type="radio" name="attendance" value="Zoom" id="zoom" required> <label>Zoom</label>
-                           <input type="radio" name="attendance" id="regrets" value="Regrets" required> <label>Will not attend</label>
-                            </fieldset>
-                        <input type="submit" id="submitForm" placeholder="Submit">
+                        <h2>Memorial Service RSVP</h2>
+                        <h3>Saturday, September 27, 2025 at 2:30 pm</h3>
+                        <h4>We invite you to be with us to remember Gloria Otero.</h4>
+                        <label>Name: </label>
+                        <input
+                            name="attendeeName"
+                            id="attendeeName"
+                            placeholder="Please enter your name."
+                            required
+                        /><br />
+                        <!-- Include at least one form and/or input with HTML attribute validation -->
+                        <label>Email Address:</label
+                        ><input
+                            name="attendeeEmail"
+                            type="email"
+                            placeholder="Please enter your email address."
+                            required
+                        /><br />
+                        <!-- <fieldset> -->
+                        <span id="attendanceLocation">Attendance:</span>
+                        <input
+                            type="radio"
+                            name="attendance"
+                            id="in-person"
+                            value="In-person"
+                            required
+                        /><label>In-person</label>
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="Zoom"
+                            id="zoom"
+                            required
+                        />
+                        <label>Zoom</label>
+                        <input
+                            type="radio"
+                            name="attendance"
+                            id="regrets"
+                            value="Regrets"
+                            required
+                        />
+                        <label>Will not attend</label>
+                        <!-- </fieldset> -->
+                        <input
+                            type="submit"
+                            id="submitForm"
+                            placeholder="Submit"
+                        />
                     </form>
                 </div>
-                <div>
+                <div id="memoryDiv">
                     <h2>What's your favorite memory of Abuelita Gloria?</h2>
                     <textarea id="comments"></textarea>
-                                            <button id="submitComments">Add</button>
+                    <button id="submitComments">Add</button>
 
-                    <!-- <ul id=""></ul> -->
-                     <ul id="favMemories">
-
-                     </ul>
-
-
+                    <ul id="favMemories"></ul>
                 </div>
-                
+
                 <div id="app">
-                <template id="postTemplate">
-                    <h3 style="margin: 0px;">Title</h3>
-                    <hr />
-                    <div style="padding: 0px 15px; margin-bottom: 50px;">
-                    <p>Content</p>
-                    </div>
-                </template>
+                    <template id="postTemplate">
+                        <h3 style="margin: 0px">Title</h3>
+                        <hr />
+                        <div style="padding: 0px 15px; margin-bottom: 50px">
+                            <p>Content</p>
+                        </div>
+                    </template>
                 </div>
-            </div>
+           
         </main>
 
         <script src="script.js"></script>

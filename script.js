@@ -1,12 +1,30 @@
 let title = document.querySelector('title')
 title.textContent = "In Loving Memory of Abuelita Gloria"
 
+const favoriteThings = ["reading the Bible","playing dominoes", "listening to Spanish music", "getting her nails done"];
+
+
 const header = document.querySelector('header')
 // header.textContent = "In Memory of Abuelita Gloria"
 
-
+// Cache at least one element using getElementById
 const abuela = document.getElementById('rounded-img');
+console.log(window)
 
+
+// https://dev.to/sakaz22/hiding-and-revealing-things-with-javascript-pageyoffset-4f2i
+// window.addEventListener("scroll", scrollUp);
+
+// function scrollUp(e) {
+//     let flowerPop = document.getElementById("flower-pop");
+//     if(window.pageYOffset <500){
+//         const myWindow = window.open("", "MsgWindow", "width=200,height=100");
+//   myWindow.innerHTML = "<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>";
+//     }
+    // else{
+    //     navigation.style.display = "none";
+    // }
+// }
 
 // how can I slow down the transition between photos? 
 
@@ -32,7 +50,7 @@ let notAttend = document.getElementById('regrets');
 const commentList = document.getElementById("comments");
 const favMemories = document.getElementById("favMemories");
 
-
+// Cache at least one element using querySelector or querySelectorAll.
 const submitComments = document.querySelector('#submitComments');
 submitComments.addEventListener('click', function (e) {
     e.preventDefault();
@@ -57,7 +75,13 @@ const regretsSelected = document.querySelector('input[id="regrets"]');
 
 const submitForm = document.getElementById('submitForm')
 
+
+// Include at least one form and/or input with DOM event-based validation. 
+// (This can be the same form or input as the one above, 
+// but should include event-based validation in addition to the HTML attribute validation.)
+
 submitForm.addEventListener("click", function (e) {
+    e.preventDefault();
     console.log(inPersonSelected)
     if (inPersonSelected.checked) {
         window.alert(`Here's the address: `);
