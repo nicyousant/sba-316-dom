@@ -12,6 +12,8 @@ const abuela = document.getElementById('rounded-img');
 console.log(window)
 
 
+
+
 // https://dev.to/sakaz22/hiding-and-revealing-things-with-javascript-pageyoffset-4f2i
 // window.addEventListener("scroll", scrollUp);
 
@@ -25,6 +27,16 @@ console.log(window)
     //     navigation.style.display = "none";
     // }
 // }
+
+// window.addEventListener("scroll", scrollUp);
+
+// function scrollUp(e) {
+    
+
+//    document.querySelector(body).style.backgroundColor = "orange"
+// }
+
+// scrollUp();
 
 // how can I slow down the transition between photos? 
 
@@ -135,3 +147,25 @@ submitForm.addEventListener("click", function (e) {
 //     app.appendChild(createPost(post.title, post.body));
 //   });
 
+const changeLanguage = document.querySelector("#changeLanguage");
+const bannerText = document.querySelector("#bannerText");
+const memorialHeading = document.querySelector("#memorialHeading");
+const memorialDate = document.querySelector("#memorialDate");
+// const inviteText = document.querySelector("#inviteText");
+const favMemoryHeader = document.querySelector("#favMemoryHeader");
+
+
+changeLanguage.addEventListener('click', function() 
+    {
+        title.textContent = "En Amoroso Recuerdo de Abuelita Gloria";
+        bannerText.textContent = "En Amoroso Recuerdo de Abuelita Gloria";
+        memorialHeading.textContent = "Discurso Memorial";
+        memorialDate.textContent = "el sabado, 27 de septiembre de 2025 a las 2:30 pm";
+        // Use the parent-child-sibling relationship to navigate between elements at least once 
+        // (firstChild, lastChild, parentNode, nextElementSibling, etc.).
+        memorialDate.nextElementSibling.textContent = "Le invitamos a estar con nosotros y recordar a Gloria Otero.";
+                favMemoryHeader.textContent = "Cual es tu recuerdo favorito de la Abuelita Gloria?";
+
+
+    }
+);

@@ -14,16 +14,17 @@
             
                 <img id="banner" src="images/oldphotos-sm.jpg" />
                 <div id="header">
-                <h1>In Loving Memory of Abuelita Gloria</h1>
+                <h1 id="bannerText">In Loving Memory of Abuelita Gloria</h1>
                 </div>
+                <div id="changeLanguage"><a href="#"><img src="images/language_spanish_36dp.svg"></a></div>
                 <img id="rounded-img" src="images/abuela406x464.PNG" />
 <div id="flowerPop"></div>
                 <div>
                     
                     <form>
-                        <h2>Memorial Service RSVP</h2>
-                        <h3>Saturday, September 27, 2025 at 2:30 pm</h3>
-                        <h4>We invite you to be with us to remember Gloria Otero.</h4>
+                        <h2 id="memorialHeading">Memorial Service</h2>
+                        <h3 id="memorialDate">Saturday, September 27, 2025 at 2:30 pm</h3>
+                        <h3 id="inviteText">We invite you to be with us to remember Gloria Otero.</h4>
                         <label>Name: </label>
                         <input
                             name="attendeeName"
@@ -32,7 +33,7 @@
                             required
                         /><br />
                         <!-- Include at least one form and/or input with HTML attribute validation -->
-                        <label>Email Address:</label
+                        <label>Email:</label
                         ><input
                             name="attendeeEmail"
                             type="email"
@@ -63,7 +64,7 @@
                             value="Regrets"
                             required
                         />
-                        <label>Will not attend</label>
+                        <label>Will not attend</label></br>
                         <!-- </fieldset> -->
                         <input
                             type="submit"
@@ -73,8 +74,8 @@
                     </form>
                 </div>
                 <div id="memoryDiv">
-                    <h2>What's your favorite memory of Abuelita Gloria?</h2>
-                    <textarea id="comments"></textarea>
+                    <h2 id="favMemoryHeader">What's your favorite memory of Abuelita Gloria?</h2>
+                    <textarea id="comments"></textarea> </br>
                     <button id="submitComments">Add</button>
 
                     <ul id="favMemories"></ul>
