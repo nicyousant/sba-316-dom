@@ -8,10 +8,12 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    
+    /* align-content: start; */
+    /* justify-content: start; */
     background-color:  lightpink;
     width: 70%;
     margin: 0px auto;
+    padding: 0px 0px;
     /* background-image: url(images/flower-bg.jpg);
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -25,9 +27,11 @@ main {
 #rounded-img {
     height: 200px;
     border-radius: 50%;
-    margin: 20px auto;
+    margin: 0px auto;
     /* margin-left: auto;
     margin-right: auto; */
+    position: relative;
+    top: 100px;
 }
 
 #header {
@@ -39,10 +43,10 @@ main {
 
     background-color: gray;
     width: 100%;
-    
+
 }
 
-h1 {
+#bannerText {
     /* font: 30px Georgia; */
     font-size: 30px;
    
@@ -58,19 +62,20 @@ form {
     flex-direction: column; */
     width: 60%;
     background-color: white;
-    margin: 25px auto;
-    padding: 40px 40px;
+    margin: 10px auto;
+    padding: 80px 40px 40px;
     border: 2px solid gray;
+      text-align: center;
     /* box-shadow: 10px 10px 5px lightblue; */
 }
 
-form  {
-    text-align: center;
-    /* font-family: Georgia, 'Times New Roman', Times, serif */
-    /* font-family: Dancing Script; */
-    /* display: block; */
+/* form  {
+  
+    font-family: Georgia, 'Times New Roman', Times, serif
+    font-family: Dancing Script;
+    display: block; 
 
-}
+}  */
 
 
 #banner {
@@ -96,6 +101,14 @@ form  {
     width: 25%;
     height: 25px;
     text-align: center;
+    background-color: bisque;
+}
+
+#submitComments {
+    width: 25%;
+    height: 25px;
+    text-align: center;
+    background-color: lightpink;
 }
 
 #memoryDiv {
@@ -103,7 +116,7 @@ form  {
     margin: 40px 0px 0px;
     /* font-family: Dancing Script; */
     background-color: bisque;
-    padding-bottom: 50px;
+    padding: 50px 0px;
 }
 
 #favMemories {
@@ -112,4 +125,41 @@ form  {
 
 #changeLanguage {
    text-align: right;
+}
+
+.card-body {
+  border: 1px solid black;
+  width: 250px;
+  margin: 2px;
+}
+
+.img-container img {
+  max-width: 100%;
+  height: auto;
+  background-color: darkgray;
+}
+
+.card-body p,
+.card-body h1 {
+  margin: 8px;
+}
+
+#app {
+    background-color: bisque;
+    display:flex;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    margin-bottom: 0px auto;
+    justify-content: space-around;;
+}
+
+#bottomImage{
+    margin-top: 0px;
+}
+
+#comments{
+    width: 40%;
+    background-color: pink;
+    height: 100px;
+    margin: 20px auto;
 }

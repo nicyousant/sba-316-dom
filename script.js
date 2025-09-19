@@ -68,6 +68,7 @@ submitComments.addEventListener('click', function (e) {
     e.preventDefault();
     const listItem = document.createElement("li");
     listItem.innerText = commentList.value;
+    
     console.log(commentList.value)
     favMemories.prepend(listItem);
     commentList.value = "";
@@ -91,6 +92,10 @@ const submitForm = document.getElementById('submitForm')
 // Include at least one form and/or input with DOM event-based validation. 
 // (This can be the same form or input as the one above, 
 // but should include event-based validation in addition to the HTML attribute validation.)
+
+
+
+
 
 submitForm.addEventListener("click", function (e) {
     e.preventDefault();
@@ -118,34 +123,46 @@ submitForm.addEventListener("click", function (e) {
 //     } else {
 //         console.log(e.target.textContent);
 
-// How do I implement this?
 
-// const app = document.getElementById("app");
+
+
+
+const app = document.getElementById("app");
 
 // // A builder function to make the
 // // created DOM structures consistent.
-// function createPost(title, content) {
-//   // Using an HTML template clone
-//   const postTemplate = document.getElementById("postTemplate");
-//   const clone = postTemplate.content.cloneNode(true);
+function createPost(title, content, source, alt) {
+// Use the DocumentFragment interface or HTML templating 
+// with the cloneNode method to create templated content.
+  const postTemplate = document.getElementById("postTemplate");
+  
+  const clone = postTemplate.content.cloneNode(true);
 
 //   // We can use selectors to find different nodes
 //   // within the template clone itself.
-//   const heading = clone.querySelector("h3");
-//   const body = clone.querySelector("p");
+  const appHeading = clone.querySelector("h1");
+  const appBody = clone.querySelector("p");
+  const appImg = clone.querySelector("img");
 
-//   heading.textContent = title;
-//   body.innerHTML = content;
+  appHeading.textContent = title;
+  appBody.innerHTML = content;
+  appImg.src = source;
+  appImg.alt = alt;
 
-//   return clone;
-// }
+  return clone;
+}
 
-// // Now, we can use the function to build consistent
-// // post elements using custom data. 
+// Now, we can use the function to build consistent
+// post elements using custom data. 
 
 //   posts.forEach((post) => {
 //     app.appendChild(createPost(post.title, post.body));
 //   });
+
+app.appendChild(createPost("Abuela", "Abuela in 2020.", "images/abuela2020.jpg", "Abuela holding a cup of coffee."));
+app.appendChild(createPost("Abuela", "Abuela at her graduation.", "images/abuela-grad.jpg", "Abuela at her graduation."));
+app.appendChild(createPost("Abuela", "Abuela in Puerto Rico.", "images/abuelainpr.jpg", "Abuela in Puerto Rico"));
+// app.appendChild(createPost("Abuela", "Abuela in 2020.", "images/puerto-rico.jpg"));
 
 const changeLanguage = document.querySelector("#changeLanguage");
 const bannerText = document.querySelector("#bannerText");
@@ -169,3 +186,6 @@ changeLanguage.addEventListener('click', function()
 
     }
 );
+
+
+
