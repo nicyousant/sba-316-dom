@@ -31,7 +31,8 @@ main {
     /* margin-left: auto;
     margin-right: auto; */
     position: relative;
-    top: 100px;
+    top: 40px;
+    z-index: 1;
 }
 
 #header {
@@ -55,6 +56,12 @@ main {
     text-align: center;
     /* margin: 30px auto;
     padding: 10px; */
+}
+
+#formHolder {
+   position:relative;
+    top: -60px;
+    z-index: 0;
 }
 
 form {
@@ -82,10 +89,13 @@ form {
     width: 100%;
 }
 
-#attendeeName {
+#attendeeName, #attendeeEmail {
     width: 200px;
     height: 20px;
-    margin: 5px;
+    margin: 10px;
+    background-color: bisque;
+    padding: 5px;
+    border-radius: 5px;
     
 }
 
@@ -99,18 +109,25 @@ form {
 
 #submitForm {
     width: 25%;
-    height: 25px;
+    height: 30px;
     text-align: center;
     background-color: bisque;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 #submitComments {
     width: 25%;
-    height: 25px;
+    height: 30px;
     text-align: center;
     background-color: lightpink;
+     margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
+/* This is where memories of Abuela are entered. */
 #memoryDiv {
     text-align: center;
     margin: 40px 0px 0px;
@@ -119,14 +136,18 @@ form {
     padding: 50px 0px;
 }
 
+/* formtat for comments that are entered and posted */
 #favMemories {
     list-style-type: none;
 }
 
+/* change content to Spanish */
 #changeLanguage {
    text-align: right;
 }
 
+
+/* format card */
 .card-body {
   border: 1px solid black;
   width: 250px;
@@ -144,6 +165,7 @@ form {
   margin: 8px;
 }
 
+/* appended cards from template */
 #app {
     background-color: bisque;
     display:flex;
@@ -154,12 +176,19 @@ form {
 }
 
 #bottomImage{
-    margin-top: 0px;
+    margin-bottom: 0px;
 }
+
 
 #comments{
     width: 40%;
     background-color: pink;
     height: 100px;
     margin: 20px auto;
+    border-radius: 5px;
+}
+
+#pr-img {
+    width: 100%;
+    opacity: 75%;
 }

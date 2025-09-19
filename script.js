@@ -110,10 +110,28 @@ submitForm.addEventListener("click", function (e) {
 })
 
 
+// const radioBtns = document.querySelectorAll("input[type='radio']");
+// console.log(radioBtns);
+
+// radioBtns.forEach((radioBtn) => {
+//     window.alert("")
+// })
 
 
 
+// menuLinks.forEach((menuLink) => {
+//     // Create an <a> element.
+//     let anchor = document.createElement("a");
 
+//     // On the new element, add an href attribute with its value set to the href property of the "link" object.
+//     anchor.setAttribute("href", menuLink.href);
+
+//     // Set the new element's content to the value of the text property of the "link" object.
+//     anchor.innerHTML = menuLink.text; // or .textContent
+
+//     // Append the new element to the topMenuEl element.
+//     topMenuEl.appendChild(anchor);
+// });
 
 // const topMenuLinks = topMenuEl.querySelectorAll("a");
 // topMenuEl.addEventListener("click", function (e) {
@@ -159,10 +177,35 @@ function createPost(title, content, source, alt) {
 //     app.appendChild(createPost(post.title, post.body));
 //   });
 
-app.appendChild(createPost("Abuela", "Abuela in 2020.", "images/abuela2020.jpg", "Abuela holding a cup of coffee."));
-app.appendChild(createPost("Abuela", "Abuela at her graduation.", "images/abuela-grad.jpg", "Abuela at her graduation."));
-app.appendChild(createPost("Abuela", "Abuela in Puerto Rico.", "images/abuelainpr.jpg", "Abuela in Puerto Rico"));
-// app.appendChild(createPost("Abuela", "Abuela in 2020.", "images/puerto-rico.jpg"));
+const posts = [
+    {title: "Abuela",
+     body: "Abuela in 2020.",
+     source:  "images/abuela2020.jpg",
+     alt:   "Abuela holding a cup of coffee.",
+    },
+    {title: "Abuela",
+     body: "Abuela at her graduation.",
+     source:  "images/abuela-grad.jpg",
+     alt:   "Abuela at her graduation.",
+    },
+    {title: "Abuela",
+     body: "Abuela in Puerto Rico.",
+     source:  "images/abuelainpr.jpg",
+     alt:   "Abuela in Puerto Rico.",
+    },
+    
+]
+
+// Iterate over a collection of elements to accomplish some task.
+posts.forEach((post) => {
+app.appendChild(createPost(post.title, post.body, post.source, post.alt));})
+
+
+
+// app.appendChild(createPost("Abuela", "Abuela in 2020.", "images/abuela2020.jpg", "Abuela holding a cup of coffee."));
+// app.appendChild(createPost("Abuela", "Abuela at her graduation.", "images/abuela-grad.jpg", "Abuela at her graduation."));
+// app.appendChild(createPost("Abuela", "Abuela in Puerto Rico.", "images/abuelainpr.jpg", "Abuela in Puerto Rico"));
+
 
 const changeLanguage = document.querySelector("#changeLanguage");
 const bannerText = document.querySelector("#bannerText");
@@ -182,7 +225,9 @@ changeLanguage.addEventListener('click', function()
         // (firstChild, lastChild, parentNode, nextElementSibling, etc.).
         memorialDate.nextElementSibling.textContent = "Le invitamos a estar con nosotros y recordar a Gloria Otero.";
                 favMemoryHeader.textContent = "Cual es tu recuerdo favorito de la Abuelita Gloria?";
-
+         // Modify the style and/or CSS classes of an element in response to user interactions
+         // using the style or classList properties.
+        bannerText.style.fontSize = "40px";
 
     }
 );
