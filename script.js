@@ -72,7 +72,8 @@ submitComments.addEventListener('click', function (e) {
     console.log(commentList.value)
     favMemories.prepend(listItem);
     commentList.value = "";
-
+         //Use Browser Object Model (BOM) properties or methods.
+    window.open("newwindow.html", "_blank", "width=357,height=500")
 })
 
 
@@ -93,21 +94,99 @@ const submitForm = document.getElementById('submitForm')
 // (This can be the same form or input as the one above, 
 // but should include event-based validation in addition to the HTML attribute validation.)
 
+const attendeeName = document.getElementById("attendeeName");
+const attendeeEmail = document.getElementById("attendeeEmail");
 
 
 
 
-submitForm.addEventListener("click", function (e) {
-    e.preventDefault();
-    console.log(inPersonSelected)
-    if (inPersonSelected.checked) {
-        window.alert(`Here's the address: `);
-    } else if (zoomSelected.checked) {
-        window.alert(`Here are the Zoom details: `);
-    } else {
-        window.alert('You will be missed.');
-    }
-})
+const form = document.querySelector("form");
+// const name = form.elements["name"];
+// const email = form.elements["email"];
+
+
+form.addEventListener("submit", validate);
+
+// The big validation function.
+// While this may seem like a lot of functions we
+// need to build, most will be very simple!
+function validate(evt) {
+  const nameVal = validateName();
+  if (nameVal === false) {
+    evt.returnValue = false;
+    return false;
+  }
+
+  const emailVal = validateEmail();
+  if (emailVal === false) {
+    evt.returnValue = false;
+    return false;
+  }
+
+}
+
+function validateEmail() {
+  let emailVal = attendeeEmail.value;
+
+  if (emailVal === "") {
+    alert("Please provide an email.");
+    attendeeEmail.focus();
+    return false;
+  }
+
+  const atpos = emailVal.indexOf("@");
+  const dotpos = emailVal.lastIndexOf(".");
+
+  if (atpos < 1) {
+    alert(
+      "Your email must include an @ symbol which must not be at the beginning of the email."
+    );
+    attendeeEmail.focus();
+    return false;
+  }
+
+  if (dotpos - atpos < 2) {
+    alert(
+      "Invalid structure: @.\nYou must include a domain name after the @ symbol."
+    );
+    attendeeEmail.focus();
+    return false;
+  }
+
+  return emailVal;
+}
+
+// Name Validation
+function validateName() {
+  if (attendeeName.value === "") {
+    alert("Please provide a name.");
+    attendeeName.focus();
+    return false;
+  }
+  return attendeeName.value;
+}
+
+
+
+// submitForm.addEventListener("click", function (e) {
+//     e.preventDefault();
+//     console.log(inPersonSelected)
+//     if (inPersonSelected.checked) {
+//         //Use Browser Object Model (BOM) properties or methods.
+//         window.alert(`Here's the address: `);
+//     } else if (zoomSelected.checked) {
+//         window.alert(`Here are the Zoom details: `);
+//     } else {
+//         window.alert('You will be missed.');
+//     }
+// })
+
+
+// submitForm.addEventListener("click", function (e) {
+//     // e.preventDefault();
+//     console.log(inPersonSelected)
+//   window.open("newwindow.html", "_blank", "width=718,height=500");
+// })
 
 
 // const radioBtns = document.querySelectorAll("input[type='radio']");
@@ -231,6 +310,5 @@ changeLanguage.addEventListener('click', function()
 
     }
 );
-
 
 
